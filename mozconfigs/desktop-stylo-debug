@@ -1,0 +1,10 @@
+source "$BUILDWITH_HOME/common"
+
+if test "$OS" = "darwin"; then
+	export LLVM_CONFIG="/usr/local/opt/llvm/bin/llvm-config"
+	export LDFLAGS=-Wl,-no_compact_unwind
+fi
+
+ac_add_options --enable-stylo
+ac_add_options --enable-debug
+# ac_add_options --disable-stylo-build-bindgen
