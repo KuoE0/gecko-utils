@@ -4,19 +4,6 @@ OS=$(uname | tr '[A-Z]' '[a-z]')
 GECKO_DEV=$(pwd)
 OBJDIR="${GECKO_DEV}/../obj-${BRANCH}-${OS}-${CONFIG}"
 
-# copy latest object files to new object folder
-if ! test -d ${OBJDIR}; then
-	LATEST_OBJDIR=$(ls -t "${GECKO_DEV}/.." | grep "${OS}-${CONFIG}$" | head -n1)
-	if test "${LATEST_OBJDIR}" != ""; then
-		LATEST_OBJDIR="${GECKO_DEV}/../${LATEST_OBJDIR}"
-		if test "$OS" = "darwin"; then
-			cp -R "${LATEST_OBJDIR}" "${OBJDIR}"
-		else
-			cp -r "${LATEST_OBJDIR}" "${OBJDIR}"
-		fi
-	fi
-fi
-
 source "$BUILDWITH_HOME/common-${OS}"
 
 export CC="/usr/local/bin/ccache clang"
