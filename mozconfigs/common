@@ -1,8 +1,7 @@
 CONFIG=$(echo $MOZCONFIG | xargs basename)
-BRANCH=$(git branch | grep '*' | tr -d '[()]' | rev | cut -d' ' -f1 | rev | tr '/' '-')
 OS=$(uname | tr '[A-Z]' '[a-z]')
 GECKO_DEV=$(pwd)
-OBJDIR="${GECKO_DEV}/../obj-${BRANCH}-${OS}-${CONFIG}"
+OBJDIR="${GECKO_DEV}/../obj-${OS}-${CONFIG}"
 
 source "$BUILDWITH_HOME/common-${OS}"
 
