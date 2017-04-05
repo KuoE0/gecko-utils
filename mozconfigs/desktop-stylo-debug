@@ -1,8 +1,11 @@
 source "$BUILDWITH_HOME/common"
 
 if test "$OS" = "darwin"; then
-	export LLVM_CONFIG="/usr/local/opt/llvm/bin/llvm-config"
-	export LDFLAGS=-Wl,-no_compact_unwind
+	# Use llvm-3.9 instead of llvm-4.0, see bug 1349479.
+	# https://bugzilla.mozilla.org/show_bug.cgi?id=1349479
+    export PATH="/usr/local/opt/llvm@3.9/bin:$PATH"
+    export CPPFLAGS="-I/usr/local/opt/llvm@3.9/include"
+    export LDFLAGS="-L/usr/local/opt/llvm@3.9/lib -Wl,-no_compact_unwind,-rpath,/usr/local/opt/llvm@3.9/lib"
 fi
 
 ac_add_options --enable-stylo
