@@ -5,4 +5,5 @@
 unalias mach
 complete -r mach
 PROMPT=${ORIGIN_PROMPT}
+unset ORIGIN_PROMPT
 add-zsh-hook -d precmd update_prompt
