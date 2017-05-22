@@ -1,4 +1,4 @@
-source "$BUILDWITH_HOME/common"
+. "$BUILDWITH_HOME/common"
 
 if test "$OS" = "darwin"; then
     # Use llvm-3.9 instead of llvm-4.0, see bug 1349479.

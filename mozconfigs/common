@@ -3,7 +3,7 @@ OS=$(uname | tr '[A-Z]' '[a-z]')
 GECKO_DEV=$(pwd)
 OBJDIR="${GECKO_DEV}/../obj-${OS}-${CONFIG}"
 
-source "$BUILDWITH_HOME/common-${OS}"
+. "$BUILDWITH_HOME/common-${OS}"
 
 export CC="clang"
 export CXX="clang++"
