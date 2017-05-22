@@ -108,3 +108,10 @@ read "Please install tarrasch/zsh-autoenv to enable autoenv!"
 cd "$GECKO_DIR"
 git checkout central/default
 ./mach bootstrap
+
+################################################################################
+# Setup llvm and clang for stylo
+################################################################################
+sudo apt install clang-3.9 llvm-3.9
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.9 10
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.9 10
