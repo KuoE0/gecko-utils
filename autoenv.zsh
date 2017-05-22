@@ -38,14 +38,14 @@ TOOL_PATH=""
 if [ -d "$HOME/.cargo/bin" ]; then
 	TOOL_PATH="$HOME/.cargo/bin:$TOOL_PATH"
 else
-	echo "Please run `mach bootstrap` to install rust compiler."
+	echo "Please run 'mach bootstrap' to install rust compiler."
 fi
 
 # Load git-mozreview
 if [ -d "$HOME/.mozbuild/version-control-tools/git/commands" ]; then
 	TOOL_PATH="$HOME/.mozbuild/version-control-tools/git/commands:$TOOL_PATH"
 else
-	echo "Please run `mach bootstrap` to install version-control-tools."
+	echo "Please run 'mach mercurial-setup' to install version-control-tools."
 fi
 
 # Load git-cinnabar
