@@ -1,12 +1,16 @@
 . "$BUILDWITH_HOME/common"
 
+# Use llvm-3.9 instead of llvm-4.0, see bug 1349479.
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1349479
 if test "$OS" = "darwin"; then
-    # Use llvm-3.9 instead of llvm-4.0, see bug 1349479.
-    # https://bugzilla.mozilla.org/show_bug.cgi?id=1349479
-    export PATH="/usr/local/opt/llvm@3.9/bin:$PATH"
-    export CPPFLAGS="-I/usr/local/opt/llvm@3.9/include"
-    export LDFLAGS="-L/usr/local/opt/llvm@3.9/lib -Wl,-no_compact_unwind,-rpath,/usr/local/opt/llvm@3.9/lib"
+	LLVM_LOCATION=/usr/local/opt/llvm@3.9
+	export LDFLAGS="-L${LLVM_LOCATION}/lib -Wl,-no_compact_unwind,-rpath,${LLVM_LOCATION}/lib"
+else
+	LLVM_LOCATION=/usr/lib/llvm-3.9
 fi
+
+export PATH="${LLVM_LOCATION}/bin:$PATH"
+export CPPFLAGS="-I${LLVM_LOCATION}/include"
 
 ac_add_options --enable-stylo
 ac_add_options --enable-debug
