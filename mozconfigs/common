@@ -5,8 +5,8 @@ OBJDIR="${GECKO_DEV}/../obj-${OS}-${CONFIG}"
 
 source "$BUILDWITH_HOME/common-${OS}"
 
-export CC="/usr/local/bin/ccache clang"
-export CXX="/usr/local/bin/ccache clang++"
+export CC="clang"
+export CXX="clang++"
 
 ac_add_options --with-ccache
 
