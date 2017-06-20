@@ -1,12 +1,10 @@
 . "$BUILDWITH_HOME/common"
 
-# Use llvm-3.9 instead of llvm-4.0, see bug 1349479.
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1349479
 if test "$OS" = "darwin"; then
-	LLVM_LOCATION=/usr/local/opt/llvm@3.9
+	LLVM_LOCATION=/usr/local/opt/llvm
 	export LDFLAGS="-L${LLVM_LOCATION}/lib -Wl,-no_compact_unwind,-rpath,${LLVM_LOCATION}/lib"
 else
-	LLVM_LOCATION=/usr/lib/llvm-3.9
+	LLVM_LOCATION=/usr/lib/llvm-4.0
 fi
 
 export PATH="${LLVM_LOCATION}/bin:$PATH"
