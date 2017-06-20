@@ -12,4 +12,5 @@ export CPPFLAGS="-I${LLVM_LOCATION}/include"
 
 ac_add_options --enable-stylo
 ac_add_options --enable-debug
+ac_add_options --disable-optimize
 # ac_add_options --disable-stylo-build-bindgen
