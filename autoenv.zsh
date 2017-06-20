@@ -21,6 +21,8 @@ if which mozconfigwrapper.sh 2>/dev/null 1>/dev/null; then
 	# Append current mozconfig's to shell prompt
 	[[ -z ${ORIGIN_PROMPT+x} ]] && ORIGIN_PROMPT=$PROMPT
 	update_prompt() {
+		# update $MOZCONFIG
+		export MOZCONFIG="$BUILDWITH_HOME/$(cat $BUILDWITH_HOME/.active)"
 		CONFIG=$(basename $MOZCONFIG)
 		PROMPT="%F{242}${CONFIG} ${ORIGIN_PROMPT}"
 	}
