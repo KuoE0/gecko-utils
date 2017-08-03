@@ -1,4 +1,4 @@
 . "$BUILDWITH_HOME/common"
 
 ac_add_options --enable-debug
-ac_add_options --disable-optimize
+ac_add_options --enable-optimize
