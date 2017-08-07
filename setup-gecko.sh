@@ -34,7 +34,7 @@ CINNABAR_DIR="$WORK_DIR/git-cinnabar"
 git clone "$CINNABAR_REPO" "$CINNABAR_DIR"
 export PATH="$CINNABAR_DIR:$PATH"
 
-pip install requests
+pip2 install requests
 git cinnabar download
 
 if [ -d "$GECKO_DIR" ]; then
@@ -92,7 +92,7 @@ git branch -u origin/master master
 # Setup mozconfigwrapper
 ################################################################################
 git clone "https://github.com/mozilla/moz-git-tools.git" "$WORK_DIR/moz-git-tools"
-pip install mozconfigwrapper
+pip2 install mozconfigwrapper
 echo "$SCRIPTPATH/mozconfigs" > $GECKO_DIR/BUILDWITH_HOME
 
 ################################################################################
