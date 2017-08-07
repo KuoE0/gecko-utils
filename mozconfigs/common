@@ -5,6 +5,9 @@ OBJDIR="${GECKO_DEV}/../obj-${OS}-${CONFIG}"
 
 . "$BUILDWITH_HOME/common-${OS}"
 
+# add clang-specified flags
+test "$CC" = "clang" && CFLAGS="-fcolor-diagnostics"
+test "$CXX" = "clang++" && CXXFLAGS="-fcolor-diagnostics"
 
 ac_add_options --with-ccache
 

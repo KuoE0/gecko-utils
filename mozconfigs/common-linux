@@ -1,8 +1,4 @@
 CPU=$(nproc)
-# disable color-diagnostics on macOS to prevent triggering iterm's printing
-CFLAGS="-fcolor-diagnostics"
-CXXFLAGS="-fcolor-diagnostics"
-
 ICECC=$(which icecc)
 if ! test "$ICECC" = ""; then
 	mk_add_options 'export CCACHE_PREFIX=icecc'
