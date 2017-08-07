@@ -5,3 +5,6 @@ if ! test "$ICECC" = ""; then
 else
 	CPU=$(nproc)
 fi
+
+export CC="gcc"
+export CXX="g++"
