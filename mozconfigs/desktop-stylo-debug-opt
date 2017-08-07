@@ -1,15 +1,5 @@
 . "$BUILDWITH_HOME/common"
 
-if test "$OS" = "darwin"; then
-	LLVM_LOCATION=/usr/local/opt/llvm
-	export LDFLAGS="-L${LLVM_LOCATION}/lib -Wl,-no_compact_unwind,-rpath,${LLVM_LOCATION}/lib"
-else
-	LLVM_LOCATION=/usr/lib/llvm-4.0
-fi
-
-export PATH="${LLVM_LOCATION}/bin:$PATH"
-export CPPFLAGS="-I${LLVM_LOCATION}/include"
-
 ac_add_options --enable-stylo
 ac_add_options --enable-debug
 ac_add_options --enable-optimize
