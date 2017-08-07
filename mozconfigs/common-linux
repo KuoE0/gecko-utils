@@ -1,6 +1,7 @@
-CPU=$(nproc)
 ICECC=$(which icecc)
 if ! test "$ICECC" = ""; then
 	mk_add_options 'export CCACHE_PREFIX=icecc'
 	CPU=100
+else
+	CPU=$(nproc)
 fi
