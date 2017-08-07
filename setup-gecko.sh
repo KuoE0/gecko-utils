@@ -58,15 +58,9 @@ git init
 git config fetch.prune true
 git config push.default upstream
 
-# mozilla-central
-git remote add central hg::https://hg.mozilla.org/mozilla-central -t branches/default/tip
-# mozilla-inbound
-git remote add inbound hg::https://hg.mozilla.org/integration/mozilla-inbound -t branches/default/tip
-git remote set-url --push inbound hg::ssh://hg.mozilla.org/integration/mozilla-inbound
-
-# for short name
-git config remote.central.fetch +refs/heads/branches/default/tip:refs/remotes/central/default
-git config remote.inbound.fetch +refs/heads/branches/default/tip:refs/remotes/inbound/default
+# mozilla-unified
+git remote add mozilla hg::https://hg.mozilla.org/mozilla-unified -t bookmarks/central
+git remote set-url --push mozilla hg::ssh://hg.mozilla.org/integration/mozilla-inbound
 
 # try server
 git remote add try hg::https://hg.mozilla.org/try
