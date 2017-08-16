@@ -71,7 +71,7 @@ git config remote.try.push +HEAD:refs/heads/branches/default/tip
 ################################################################################
 # Setup my Gecko
 ################################################################################
-GECKO_REPO="git@github.com:KuoE0/gecko-dev.git"
+GECKO_REPO="git@github.com:kuoe0/gecko-dev.git"
 git remote add origin "$GECKO_REPO"
 
 # update all remote branch
