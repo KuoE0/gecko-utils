@@ -15,6 +15,10 @@ fi
 OS="$(uname)"
 if [ "$OS" = "Darwin" ]; then
 	SCRIPTPATH=$(realpath "$0" | xargs -0 dirname)
+	# mach bootstrap wouldn't install ccache
+	brew install ccache
+	# To resolve "com.github.facebook.watchman.plist for write: Permission denied" for watchman.
+	sudo chown -R $(whoami):staff ~/Library/LaunchAgents
 else
 	SCRIPTPATH=$(readlink -f "$0" | xargs -0 dirname)
 fi
