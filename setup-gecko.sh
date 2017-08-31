@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 #
 # setup-gecko.sh
-# Copyright (C) 2017 KuoE0 <kuoe0.tw@gmail.com>
-#
-# Distributed under terms of the MIT license.
+# Copyright (C) 2017 KuoE0 <kuoe0.tw@gmail.com> Distributed under terms of the MIT license.
 #
 
 if [ "$#" != "1" ]; then
@@ -21,6 +19,7 @@ if [ "$OS" = "Darwin" ]; then
 	sudo chown -R $(whoami):staff ~/Library/LaunchAgents
 else
 	SCRIPTPATH=$(readlink -f "$0" | xargs -0 dirname)
+	sudo apt install clang llvm
 fi
 
 WORK_DIR="$1"
@@ -107,8 +106,3 @@ cd "$GECKO_DIR"
 git checkout central/default
 ./mach bootstrap
 ./mach mercurial-setup
-
-################################################################################
-# Setup llvm and clang for stylo
-################################################################################
-sudo apt install clang llvm
