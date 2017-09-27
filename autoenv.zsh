@@ -5,6 +5,9 @@ OS=$(uname)
 
 autostash GECKO=$(git rev-parse --show-toplevel)
 alias mach="$GECKO/mach"
+alias mb="mach build"
+alias mbb="mach build binaries"
+alias mt="mach try"
 
 LOCATE="locate"
 [[ "$OS" = "Darwin" ]] && LOCATE="mdfind" # use `mdfind` in OS X as locate
