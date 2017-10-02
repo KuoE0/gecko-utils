@@ -13,6 +13,9 @@ fi
 OS="$(uname)"
 if [ "$OS" = "Darwin" ]; then
 	SCRIPTPATH=$(realpath "$0" | xargs -0 dirname)
+	# install Xcode
+	mas install 497799835
+	sudo xcode-select --switch /Applications/Xcode.app
 	# mach bootstrap wouldn't install ccache
 	brew install ccache
 	# To resolve "com.github.facebook.watchman.plist for write: Permission denied" for watchman.
