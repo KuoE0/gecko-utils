@@ -7,6 +7,9 @@ autostash GECKO=$(git rev-parse --show-toplevel)
 alias mach="$GECKO/mach"
 alias mb="mach build"
 alias mbb="mach build binaries"
+alias mbf="mach build faster"
+alias mr="mach run"
+alias mrl="mach run --layoutdebug"
 alias mt="mach try"
 
 LOCATE="locate"
