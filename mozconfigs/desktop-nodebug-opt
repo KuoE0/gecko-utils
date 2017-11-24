@@ -1,5 +1,6 @@
 . "$BUILDWITH_HOME/common"
 
+ac_add_options --disable-debug
 ac_add_options --enable-optimize
 
 mk_add_options AUTOCLOBBER=1
