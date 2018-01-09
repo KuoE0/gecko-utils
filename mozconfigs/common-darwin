@@ -1,4 +1,8 @@
 CPU=$(gnproc) # coreutils needed
 
-export CC="clang"
-export CXX="clang++"
+test "$MOBILE" != "1" && export CC="clang"
+test "$MOBILE" != "1" && export CXX="clang++"
+
+# With the following Android SDK and NDK:
+test "$MOBILE" = "1" && ac_add_options --with-android-sdk="/Users/kuoe0/.mozbuild/android-sdk-macosx"
+test "$MOBILE" = "1" && ac_add_options --with-android-ndk="/Users/kuoe0/.mozbuild/android-ndk-r15c"
